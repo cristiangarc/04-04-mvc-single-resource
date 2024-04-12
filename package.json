@@ -1,0 +1,28 @@
+{
+  "name": "04-04-mvc-single-resource",
+  "version": "1.0.0",
+  "description": "#### Objective Create an Express application that includes a custom controller and associated routes, demonstrating the MVC architectural pattern. This exercise is designed to practice organizing application logic through controllers and managing client requests via routes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiangarc/04-04-mvc-single-resource.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristiangarc/04-04-mvc-single-resource/issues"
+  },
+  "homepage": "https://github.com/cristiangarc/04-04-mvc-single-resource#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
