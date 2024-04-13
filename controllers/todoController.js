@@ -24,7 +24,12 @@ const createTodo = (req, res) => {
         completed: req.body.completed
     }
     todos.push(newTodo);
-    res.status(201).json(newTodo);
+    const hasProperLength = todos.length === newTodo.id;
+    if (hasProperLength) {
+        res.status(201).json(newTodo);
+    } else {
+        res.status(400).send('Error adding the todo');
+    }
 }
 
 const updateTodo = (req, res) => {
