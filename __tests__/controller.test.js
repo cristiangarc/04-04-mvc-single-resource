@@ -1,6 +1,7 @@
 // todo.test.js
 const request = require('supertest');
-const app = require('../index'); // Adjust this path to correctly import your Express app
+const index = require('../index'); // Adjust this path to correctly import your Express app
+const app = index.app;
 
 describe('Todo Controller and Routes', () => {
   // Test the GET /todos route
