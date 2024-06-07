@@ -28,12 +28,41 @@ describe('Todo Controller and Routes', () => {
       .post('/todos')
       .send(newTodo);
 
-    expect(response.statusCode).toBe(200);
+    expect(response.statusCode).toBe(201);
     expect(response.body).toHaveProperty('id');
     expect(response.body.title).toBe(newTodo.title);
     expect(response.body.completed).toBe(newTodo.completed);
   });
 
   // Additional tests can be added to validate update and delete functionalities
+  // Test the PUT /todos route for updating a todo item
+  it('should update a todo by id and return it', async () => {
+    const updatedTodo = {
+      id: 1,
+      title: 'Updated Todo',
+      completed: false
+    };
+
+    const response = await request(app)
+      .put('/todos/1')
+      .send(updatedTodo);
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.id).toBe(1);
+    expect(response.body.title).toBe(updatedTodo.title);
+    expect(response.body.completed).toBe(updatedTodo.completed);
+  });
+
+  // Test the DELETE /todos route for deleting a todo item
+  it('should delete a todo item by id', async () => {
+    const todoId = 1;
+
+    const response = await request(app)
+      .delete(`/todos/${todoId}`)
+
+    expect(response.statusCode).toBe(200);
+    expect(response.text).toContain('Todo successfully deleted');
+  });
+
 });
 
